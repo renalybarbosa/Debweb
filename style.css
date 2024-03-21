@@ -1,3 +1,16 @@
 h2{
     color: aqua;
 }
+
+.menu{
+    display: inline-block;/*deixa lado a lado */
+    padding: 10px 20px; /* */
+    background-color: aqua;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;/* borda arredondada*/
+    border:none;
+}
+.menu:houver{
+    background-color: blueviolet;
+}

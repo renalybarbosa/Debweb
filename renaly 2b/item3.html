@@ -15,6 +15,7 @@
                 <a type="button" class="btn btn-success" href="index.html" >
                     <li class="menu">Item 1</li>
                 </a><style>
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
                     .calculator {
                             max-width: 400px;
                             margin: 50px auto;
@@ -27,6 +28,9 @@
                             text-align: right;
                             font-size: 2em;
                             padding: 10px;
+                        }
+                        .sub{
+                            font-family: "Inter", sans-serif;
                         }       
                 </style>
                 <a type="button" class="btn btn-success" href="Item2.html">
@@ -40,9 +44,33 @@
         <h1>pagina 3</h1>
     </header>
     <main>
-        <h2 id="DataHora"> Hora aparece aqui </h2>
-        <button type="button" class="btn btn-primary" onclick=atual() >Click aqui para saber a data e hora</button>
-        <script src="script.js"></script>
+        <script>
+            function atual() {
+                const now = new Date();
+
+                // Formatar a data e hora no formato brasileiro
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0'); // Meses começam do zero
+                const year = now.getFullYear();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                const formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+                // Atualizar o conteúdo do elemento <h2> com o id "DataHora"
+                document.getElementById('DataHora').innerText = formattedDateTime;
+            }
+
+            // Configurar a atualização a cada segundo
+            setInterval(atual, 1000);
+
+  </script>
+        <div class="container my-5 text-conter">
+            <h2 id="DataHora"class="sub">hora aqui</h2>
+        </div>
+
+
         <section>
             <script src="calculadora.js" ></script> 
             <div class="container">
@@ -121,8 +149,8 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </section>
     </main>
-    <footer>
-        Isso é o rodapé
+    <footer class= "bg-dark text-center py-3">
+        &#0169 pagina criada por Renamaly
     </footer>
     
 </body>
